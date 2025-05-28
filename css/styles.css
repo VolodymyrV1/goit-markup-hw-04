@@ -85,7 +85,8 @@ body {
 
 .header {
   border-bottom: 1px solid #e7e9fc;
-  padding: 24px 0;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
+
 
 }
 
@@ -97,6 +98,7 @@ body {
 .header-nav {
   display: flex;
   align-items: center;
+
 }
 
 .header-logo {
@@ -108,6 +110,8 @@ body {
   text-transform: uppercase;
   color: #4d5ae5;
   margin-right: 76px;
+  padding: 24px 0;
+
 }
 
 .header-logo-black {
@@ -122,33 +126,48 @@ body {
   color: #2e2f42;
   display: flex;
   gap: 40px;
+  align-items: center;
+
 }
 
 .header-list-item {
 }
 
-.studio-active{
-  margin: 0;
-
-
-}
-.studio-active::after {
+.header-list-link::after {
   content: "";
-  display: block;
-  border-radius: 2px;
-  width: 48px;
+
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+
+
+  width: 100%;
   height: 4px;
-  margin-top: 20px;
-  background: #404bbf;
+  border-radius: 2px;
+
+  background-color: #404bbf;
+
+  opacity: 0;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-list-link:hover::after,
+.header-list-link:focus::after,
+.header-list-link.current::after {
+  opacity: 1;
 }
 
 .header-list-link {
+  display: block;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
   padding: 24px 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  position: relative;
 }
 
 .header-list-link:hover,
@@ -174,8 +193,10 @@ body {
 .address-contact {
   font-size: 16px;
   line-height: 1.5;
+  padding: 24px 0;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-contact:hover,
@@ -193,9 +214,12 @@ body {
       rgba(46, 47, 66, 0.7)
     ), 
     url(/images/imgback1.jpg);
-  background-size: 1440px 600px;
+
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
+  max-width: 1440px;
+  margin: 0 auto;
 
   }
 
@@ -230,6 +254,7 @@ body {
   height: 56px;
   border: none;
   border-radius: 4px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15)
 }
 
 .btn-order-service:hover,
@@ -263,6 +288,19 @@ body {
 
 .benefits-list-item {
   width: calc((100% - 72px) / 4);
+}
+
+.benefits-box {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  background: #f4f4fd; 
+  margin-bottom: 8px;
+}
+
+.benefits-icon {
+  
 }
 
 .benefits-subtitle {
