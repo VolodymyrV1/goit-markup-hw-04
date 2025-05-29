@@ -211,7 +211,7 @@ body {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(/images/imgback1.jpg);
+    url(./images/imgback1.jpg);
 
   background-repeat: no-repeat;
   background-position: center center;
